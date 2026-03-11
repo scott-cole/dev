@@ -32,8 +32,19 @@ return {
 		-- new tab
 		{ key = "c", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
 
-		-- new window
-		{ key = "n", mods = "ALT", action = act.SpawnWindow },
+		-- Create a new tab with Alt+n
+		{
+			key = "n",
+			mods = "ALT",
+			action = wezterm.action.SpawnTab("DefaultDomain"),
+		},
+
+		-- Navigate directly to tabs 1–5 with Alt+1..5
+		{ key = "1", mods = "ALT", action = wezterm.action.ActivateTab(0) },
+		{ key = "2", mods = "ALT", action = wezterm.action.ActivateTab(1) },
+		{ key = "3", mods = "ALT", action = wezterm.action.ActivateTab(2) },
+		{ key = "4", mods = "ALT", action = wezterm.action.ActivateTab(3) },
+		{ key = "5", mods = "ALT", action = wezterm.action.ActivateTab(4) },
 
 		-- full screen
 		{ key = "f", mods = "ALT", action = act.ToggleFullScreen },
